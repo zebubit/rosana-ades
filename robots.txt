@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_candidatas/
+Disallow: /_captura_instagram/
+
+Sitemap: https://rosanaades.com.br/sitemap.xml

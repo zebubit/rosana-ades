@@ -1,0 +1,13 @@
+# Capturas brutas do Instagram (não publicar)
+*_files/
+(1) Instagram*.html
+ewe.html
+hhh.html
+ooo.html
+_candidatas/
+_captura_instagram/
+
+# Screenshots e temporários
+Captura de Tela*.png
+*.heic
+.DS_Store
