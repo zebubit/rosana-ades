@@ -36,15 +36,7 @@
     els.forEach(function(el){ io.observe(el); });
   }
 
-  /* Parallax leve no hero — SÓ desktop com ponteiro fino (evita travar scroll no mobile) */
-  var fine = window.matchMedia('(min-width:1024px) and (pointer:fine)').matches;
-  var media = document.querySelector('.hero-media');
-  if(fine && !reduce && media){
-    window.addEventListener('scroll', function(){
-      var y = window.scrollY;
-      if(y < window.innerHeight) media.style.transform = 'translateY(' + (y*0.18) + 'px)';
-    }, {passive:true});
-  }
+  /* (Parallax do hero removido: causava tremida ao rolar. Rolagem lisa agora.) */
 
   /* Ano dinâmico no rodapé */
   document.querySelectorAll('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
