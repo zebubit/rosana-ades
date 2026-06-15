@@ -53,11 +53,7 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="hero-media">
-    <!-- O vídeo entra aqui quando pronto; a foto serve de capa e fallback -->
-    <video autoplay muted loop playsinline poster="assets/img/hero-capa.jpg" preload="none" id="heroVideo">
-      <source src="assets/video/hero.mp4" type="video/mp4">
-    </video>
-    <img src="assets/img/hero-capa.jpg" alt="Mãos que acolhem em um momento de cuidado" style="display:none" id="heroFallback">
+    <img src="assets/img/hero-capa.jpg" alt="Mãos que acolhem em um momento de cuidado" fetchpriority="high">
   </div>
   <div class="hero-inner">
     <div class="col">
