@@ -82,7 +82,19 @@
     }
     var wasOn = sessionStorage.getItem(KEY_ON);
     if(wasOn==='1') startPlay();
-    else if(wasOn===null && !reduce) setTimeout(startPlay, 4000);
+    else if(wasOn===null && !reduce) setTimeout(startPlay, 3000);
+
+    // Fallback: navegadores bloqueiam som automático ate a 1a interacao.
+    // Assim que o usuario tocar/rolar/clicar, inicia (se nao pausou de proposito).
+    function onFirstInteract(){
+      if(sessionStorage.getItem(KEY_ON)!=='0' && audio.paused) startPlay();
+      ['pointerdown','touchstart','keydown','scroll'].forEach(function(ev){
+        window.removeEventListener(ev, onFirstInteract);
+      });
+    }
+    ['pointerdown','touchstart','keydown','scroll'].forEach(function(ev){
+      window.addEventListener(ev, onFirstInteract, {passive:true, once:false});
+    });
 
     btn.addEventListener('click', function(){
       if(audio.paused){ audio.play().then(function(){ markPlaying(); sessionStorage.setItem(KEY_ON,'1'); }).catch(function(){}); }
