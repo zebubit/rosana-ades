@@ -269,6 +269,20 @@ footer li a:hover{color:var(--rose)}
 .wa-float::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:waPulse 2.4s ease-out infinite}
 @keyframes waPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
 
+/* ---------- Player de música ambiente ---------- */
+.music-btn{position:fixed;left:20px;bottom:24px;z-index:90;width:48px;height:48px;border-radius:50%;
+  background:rgba(160,112,106,.92);border:1px solid rgba(255,255,255,.4);color:#fff;cursor:pointer;
+  display:grid;place-items:center;box-shadow:var(--shadow);transition:transform .25s var(--ease),background .25s}
+.music-btn:hover{transform:scale(1.08);background:var(--rose-deep)}
+.music-btn svg{width:20px;height:20px}
+.music-btn .music-icon-pause{display:none}
+.music-btn.playing .music-icon-play{display:none}
+.music-btn.playing .music-icon-pause{display:block}
+.music-btn .music-wave{position:absolute;inset:0;border-radius:50%;border:2px solid var(--rose-dk)}
+.music-btn.needs-click .music-wave{animation:musicPulse 2s ease-out infinite}
+@keyframes musicPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+@media(max-width:560px){.music-btn{width:42px;height:42px;left:16px;bottom:20px}}
+
 /* ---------- Reveal (Motion / fallback) ---------- */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .reveal.in{opacity:1;transform:none}
