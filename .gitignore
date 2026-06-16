@@ -11,3 +11,7 @@ _captura_instagram/
 Captura de Tela*.png
 *.heic
 .DS_Store
+
+# fonte 4K pesada do hero (usar só a versao otimizada em assets/video/)
+6628413-uhd_4096_2160_25fps.mp4
+*-uhd_*.mp4
