@@ -292,10 +292,14 @@ footer li a:hover{color:var(--rose)}
 .no-js .reveal{opacity:1;transform:none}
 
 /* ---------- Responsivo ---------- */
-@media(max-width:900px){
+/* Menu com 9 itens só cabe inteiro a partir de ~1030px; abaixo disso vira hamburguer
+   (breakpoint próprio, separado do resto do layout responsivo que ainda quebra em 900px). */
+@media(max-width:1030px){
   .nav-links{position:fixed;inset:0 0 0 auto;width:78%;max-width:340px;background:var(--cream);flex-direction:column;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:var(--shadow-lg)}
   .nav-links.open{transform:none}
   .nav-toggle{display:flex}
+}
+@media(max-width:900px){
   .split,.product,.contact-grid{grid-template-columns:1fr}
   .split.rev .media{order:0}
   .split .media .badge{right:18px}
